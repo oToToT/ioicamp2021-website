@@ -1,0 +1,45 @@
+{
+  "pages": [
+    {
+      "name": "最新消息",
+      "link": "/news/"
+    },
+    {
+      "name": "活動簡章",
+      "link": "/rules/"
+    },
+    {
+      "name": "集訓內容",
+      "link": "/event",
+      "children": [
+        {
+          "name": "課程主題",
+          "link": "/courses/"
+        },
+        {
+          "name": "活動日程",
+          "link": "/dates/"
+        },
+        {
+          "name": "師資陣容",
+          "link": "/teaching/"
+        }
+      ]
+    },
+    {
+      "name": "活動緣起",
+      "link": "/about/"
+    },
+    {
+      "name": "<i class='fas fa-sign-in-alt'></i>&nbsp;&nbsp;登入",
+      "link": "/signin/",
+      "links": [
+        "/signup/"
+      ],
+      "alternate": {
+        "name": "修改資料",
+        "link": "/edit/"
+      }
+    }
+  ]
+}
