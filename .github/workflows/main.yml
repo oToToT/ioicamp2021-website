@@ -19,6 +19,7 @@ jobs:
         node-version: 14
     - run: npm install
     - run: npm run generate
+    - run: echo 'ioic.dve.tw' > dist/CNAME
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
