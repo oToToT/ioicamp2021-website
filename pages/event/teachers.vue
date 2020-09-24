@@ -83,7 +83,9 @@ export default Vue.extend({
         display: flex;
         justify-content: center;
         img {
-          width: 100%;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: center;
         }
       }
       &:first-of-type {

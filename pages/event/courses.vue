@@ -10,15 +10,15 @@
         h4 先到各大 Online Judge 申請帳號寫題目吧！
         ul
           li
-            a(href='https://codeforces.com') Codeforces
+            a(href="https://codeforces.com") Codeforces
           li
-            a(href='https://atcoder.jp/') AtCoder
+            a(href="https://atcoder.jp/") AtCoder
           li
-            a(href='https://www.codechef.com/') CodeChef
+            a(href="https://www.codechef.com/") CodeChef
           li
-            a(href='https://www.topcoder.com/') TopCoder
+            a(href="https://www.topcoder.com/") TopCoder
           li
-            a(href='https://tioj.infor.org/') TIOJ Infor Online Judge
+            a(href="https://tioj.infor.org/") TIOJ Infor Online Judge
         h4 舒適的打比賽環境
         ul
           li 建置你的開發環境
@@ -28,7 +28,7 @@
         ul
           li 網路資源
           li 你的好友
-    section-block(v-for="course in courses", :key="course.slug").course
+    section-block.course(v-for="course in courses", :key="course.slug")
       template(v-slot:title) {{ course.name }}
       template
         h4 預備知識
@@ -88,12 +88,15 @@ export default Vue.extend({
     display: flex;
     flex-wrap: wrap;
     .course {
-      width: calc(50% - 8px);
-      &:nth-child(even) {
-        margin-left: 8px;
-      }
-      &:nth-child(odd) {
-        margin-right: 8px;
+      width: 100%;
+      @include with-not-mobile {
+        width: calc(50% - 8px);
+        &:nth-child(even) {
+          margin-left: 8px;
+        }
+        &:nth-child(odd) {
+          margin-right: 8px;
+        }
       }
     }
   }
