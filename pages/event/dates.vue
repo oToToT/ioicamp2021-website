@@ -92,11 +92,11 @@ export default Vue.extend({
     margin-left: 2vw;
     margin-right: 2vw;
     margin-top: 20px;
-    background: #fff;
     font-size: 1.3em;
     overflow: auto;
     text-align: center;
     table {
+      background: #fff;
       border-collapse: collapse;
       border-spacing: 0;
       border: 0;
