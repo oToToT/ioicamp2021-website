@@ -12,7 +12,6 @@ header.nav
           nuxt-link.skewed.item(
             v-if="typeof ele.children === 'undefined'",
             :to="ele.link",
-            :class="{ active: isCurrentPage(ele) }",
             :href="ele.link",
             :key="ele.link"
           )
@@ -190,7 +189,8 @@ header.nav {
             animation: none;
           }
         }
-        &.active {
+        &.active,
+        &.nuxt-link-active {
           background-color: #e5a54d;
           color: #f6ea25;
           @include with-mobile {
@@ -234,6 +234,14 @@ header.nav {
             &:last-of-type {
               padding-bottom: $nav-header-height * 0.15;
             }
+            &.nuxt-link-active,
+            &.active {
+              background-color: #ffe6c4;
+              color: #ffbd00;
+              @include with-mobile {
+                background-color: transparent;
+              }
+            }
           }
           @include with-not-mobile {
             display: none !important;
@@ -241,7 +249,8 @@ header.nav {
         }
         @include with-not-mobile {
           &:hover,
-          &.active:hover {
+          &.active:hover,
+          &.nuxt-link-active:hover {
             align-self: flex-start;
             background-color: #ffe6c4;
             color: #ffca34;
