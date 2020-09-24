@@ -65,6 +65,7 @@ a {
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-bottom-color: #000;
+        border-radius: 0;
         outline: none;
         &:focus {
           border-bottom-width: 2px;
@@ -77,7 +78,13 @@ a {
         input[type="text"],
         input[type="email"],
         input[type="password"] {
+          width: calc(100% - 30px);
           border-bottom-color: #900000;
+          background-image: url('/flat-2126885.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right center;
+          padding-right: 30px;
         }
       }
     }
