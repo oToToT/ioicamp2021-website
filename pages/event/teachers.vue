@@ -4,13 +4,13 @@
     i.fas.fa-dragon
     | &nbsp;師資陣容
   .teachers
-    .teacher(v-for="teacher in teachers", :key='teacher.slug')
+    .teacher(v-for="teacher in teachers", :key="teacher.slug")
       .image
-        img(:src='teacher.image')
+        img(:src="teacher.image")
       .intro
         h3.name {{ teacher.name }}
         .experience
-          ul(v-for="experience in teacher.experiences", :key='experience')
+          ul(v-for="experience in teacher.experiences", :key="experience")
             li {{ experience }}
   .cutter
 </template>
@@ -80,12 +80,17 @@ export default Vue.extend({
       }
       .image {
         width: 30%;
-        display: flex;
-        justify-content: center;
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
         img {
           max-width: 100%;
           object-fit: contain;
-          object-position: center;
+          vertical-align: middle;
+          display: inline-block;
         }
       }
       &:first-of-type {
