@@ -1,0 +1,12 @@
+name: 資料結構初階
+preknowledge:
+  - 基礎程式語法
+  - 陣列
+  - 指標
+  - 呼吸
+abstract:
+  - C++ STL
+  - 並查集=DSU
+  - 數狀樹組=BIT=Fenwick tree
+  - 線段樹=segment tree
+

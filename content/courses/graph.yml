@@ -1,0 +1,13 @@
+name: 圖論
+preknowledge:
+  - DFS, BFS
+  - 並查集
+  - 最短路
+  - MST
+abstract:
+  - 點雙連通、邊雙連通
+  - SCC
+  - 樹 DP
+  - DFS序
+  - 樹練剖分
+  - 重心剖分
