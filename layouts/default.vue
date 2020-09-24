@@ -13,7 +13,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="sass">
+<style lang="scss">
 @font-face {
     font-family: "Huninn";
     font-style: normal;

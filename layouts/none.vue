@@ -6,10 +6,10 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'None',
-})
+});
 </script>
 
-<style lang="sass">
+<style lang="scss">
 @font-face {
     font-family: "Huninn";
     font-style: normal;
@@ -25,5 +25,4 @@ export default Vue.extend({
 .fa, .far, .fas {
   font-family: "Font Awesome 5 Free";
 }
-
 </style>
