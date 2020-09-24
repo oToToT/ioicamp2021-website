@@ -87,8 +87,12 @@ export default Vue.extend({
     padding-right: 1vw;
     display: flex;
     flex-wrap: wrap;
+    align-content: stretch;
     .course {
       width: 100%;
+      @include with-mobile {
+        margin-bottom: 10px !important;
+      }
       @include with-not-mobile {
         width: calc(50% - 8px);
         &:nth-child(even) {
