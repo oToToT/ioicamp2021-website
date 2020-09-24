@@ -64,6 +64,9 @@ export default Vue.extend({
       background-color: white;
       padding: 20px 20px;
       margin: 20px 0;
+      @include with-mobile {
+        padding: 5px 10px;
+      }
       .intro {
         width: 70%;
         padding: 15px 20px;
@@ -72,9 +75,22 @@ export default Vue.extend({
           font-weight: 700;
         }
         .experience {
+          padding-left: 8px;
           & > ul > li {
             font-family: "Noto Serif TC", serif;
             font-weight: 600;
+            margin-bottom: 3px;
+            &:before {
+              content: "\f559 ";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 600;
+              width: 1.2em;
+              display: inline-block;
+            }
+          }
+          & > ul {
+            padding: 0;
+            list-style: none;
           }
           margin-top: 10px;
           font-size: 1.1em;
