@@ -4,7 +4,7 @@
     i.fas.fa-dragon
     | &nbsp;師資陣容
   .teachers
-    .teacher(v-for="teacher in teachers", :key='teacher.name')
+    .teacher(v-for="teacher in teachers", :key='slug')
       .image
         img(:src='teacher.image')
       .intro
