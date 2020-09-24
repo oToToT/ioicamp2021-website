@@ -16,7 +16,7 @@ header.nav
             :key="ele.link"
           )
             span(v-html="ele.name")
-          .items(
+          .skewed.items(
             v-else,
             :class="{ active: isCurrentPage(ele) }",
             :key="ele.link",
@@ -251,6 +251,10 @@ header.nav {
           &:hover,
           &.active:hover,
           &.nuxt-link-active:hover {
+            transform: rotate(0);
+            & > * {
+              transform: rotate(0);
+            }
             align-self: flex-start;
             background-color: #ffe6c4;
             color: #ffca34;
