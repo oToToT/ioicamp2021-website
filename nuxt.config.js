@@ -44,7 +44,6 @@ export default {
   ],
   styleResources: {
     scss: [
-      '~assets/_basic.scss',
       '~assets/_vars.scss',
       '~assets/_section-block.scss'
     ],
