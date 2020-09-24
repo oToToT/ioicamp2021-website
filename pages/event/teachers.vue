@@ -69,10 +69,12 @@ export default Vue.extend({
         padding: 15px 20px;
         .name {
           font-size: 1.5em;
+          font-weight: 700;
         }
         .experience {
           & > ul > li {
             font-family: "Noto Serif TC", serif;
+            font-weight: 600;
           }
           margin-top: 10px;
           font-size: 1.1em;
@@ -81,6 +83,8 @@ export default Vue.extend({
       .image {
         width: 30%;
         &::before {
+          // vertical centering from
+          // http://csscoke.com/2018/08/21/css-vertical-align/
           content: "";
           display: inline-block;
           height: 100%;
