@@ -357,12 +357,8 @@ export default Vue.extend({
   methods: {
     isCurrentPage(ele) {
       const path = this.$route.path;
-      console.log(ele.link);
-      console.log(typeof ele.children);
       if (typeof ele.children === "undefined") {
-        console.log("hi");
         if (typeof ele.links === "undefined") return path === ele.link;
-        console.log("hi");
         let idx = ele.links.findIndex((x) => x === path);
         return path === ele.link || idx !== -1;
       }
