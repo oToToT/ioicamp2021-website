@@ -25,7 +25,7 @@ a {
   }
 }
 .section {
-  background: #d9d9d9;
+  background: #fff;
   padding: 25px 5vw 30px 5vw;
   h1,
   h2 {
@@ -45,7 +45,7 @@ a {
         font-weight: 300;
         font-family: "Noto Sans TC", sans-serif;
         display: inline-block;
-        min-width: 85px;
+        min-width: 70px;
         width: 20%;
         padding: 5px 10px;
         background: #333;
@@ -57,7 +57,8 @@ a {
       input[type="password"] {
         font-size: 1.2em;
         display: inline-block;
-        width: 100%;
+        width: calc(80% - 50px);
+        max-width: calc(100% - 120px);
         background: transparent;
         border-top: none;
         border-left: none;
