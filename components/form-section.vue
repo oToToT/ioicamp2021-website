@@ -55,6 +55,7 @@ a {
       input[type="text"],
       input[type="email"],
       input[type="password"] {
+        font-family: "Huninn", sans-serif;
         font-size: 1.2em;
         display: inline-block;
         width: calc(80% - 50px);
@@ -79,7 +80,8 @@ a {
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-          width: calc(100% - 30px);
+          width: calc(80% - 80px);
+          max-width: calc(100% - 150px);
           border-bottom-color: #900000;
           background-image: url('/flat-2126885.svg');
           background-size: contain;
