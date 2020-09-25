@@ -4,6 +4,16 @@ header.nav
     .left-side
       nuxt-link.icon(to="/")
         img(src="/Asset 9.png")
+      svg#speak(height="50", width="165", v-if="current_page_name !== ''")
+        ellipse(cx=83, cy=25, rx=75, ry=20, style="fill:#fff;")
+        polygon(points="0,5 50,15 16,25", style="fill:#fff;")
+        text(
+          x=45,
+          y=32,
+          fill="#db6d42",
+          style="font: 900 1.2em 'Noto Serif TC', serif;",
+          engthAdjust="spacingAndGlyphs"
+        ) {{ current_page_name }}
     .right-side
       #nav-button(data-display="flex", data-time="100", @click="toggleNav")
         i.fas.fa-bars
@@ -14,7 +24,7 @@ header.nav
             :to="ele.link",
             :href="ele.link",
             :key="ele.link",
-            :class="{ active: isCurrentPage(ele) }",
+            :class="{ active: isCurrentPage(ele) }"
           )
             span(v-html="ele.name")
           .skewed.items(
@@ -88,6 +98,14 @@ header.nav {
       box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2),
         0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
       background-color: #e5a54d;
+    }
+    #speak {
+      position: relative;
+      top: ($nav-header-height * -0.8);
+      transform: scale($nav-header-height / 50px);
+      @include with-mobile {
+        display: none;
+      }
     }
     .icon > img {
       position: relative;
@@ -347,6 +365,19 @@ export default Vue.extend({
         }
       }
       return pages;
+    },
+    current_page_name() {
+      const path = this.$route.path;
+      for (let page of this.pages) {
+        if (typeof page.children === 'undefined') {
+          continue;
+        }
+        for (let sub of page.children) {
+          if (path === page.link + sub.link)
+            return sub.name;
+        }
+      }
+      return "";
     },
   },
   async fetch() {

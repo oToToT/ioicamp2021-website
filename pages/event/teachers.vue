@@ -1,8 +1,8 @@
 <template lang="pug">
 .container
-  h1.title
-    i.fas.fa-dragon
-    | &nbsp;師資陣容
+  //- h1.title
+  //-   i.fas.fa-dragon
+  //-   | &nbsp;師資陣容
   .teachers
     .teacher(v-for="teacher in teachers", :key="teacher.slug")
       .image

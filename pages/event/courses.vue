@@ -1,8 +1,8 @@
 <template lang="pug">
 .container
-  h1.title
-    i.fas.fa-book
-    | &nbsp;課程主題
+  //- h1.title
+  //-   i.fas.fa-book
+  //-   | &nbsp;課程主題
   .courses
     section-block.course
       template(v-slot:title) 課前自我鍛鍊

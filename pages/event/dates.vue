@@ -1,8 +1,8 @@
 <template lang="pug">
 .container
-  h1.title
-    i.far.fa-calendar-alt
-    | &nbsp;活動日程
+  //- h1.title
+  //-   i.far.fa-calendar-alt
+  //-   | &nbsp;活動日程
   .dates
     table
         tr
