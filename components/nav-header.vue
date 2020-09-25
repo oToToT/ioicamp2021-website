@@ -13,7 +13,8 @@ header.nav
             v-if="typeof ele.children === 'undefined'",
             :to="ele.link",
             :href="ele.link",
-            :key="ele.link"
+            :key="ele.link",
+            :class="{ active: isCurrentPage(ele) }",
           )
             span(v-html="ele.name")
           .skewed.items(
@@ -171,8 +172,8 @@ header.nav {
           }
         }
         &:hover {
-          background-color: #ffe6c4;
-          color: #ffca34;
+          background-color: #c5a475;
+          color: #fff368;
           animation: quake 0.4s;
           @keyframes quake {
             0% {
@@ -256,7 +257,7 @@ header.nav {
               transform: rotate(0);
             }
             align-self: flex-start;
-            background-color: #ffe6c4;
+            background-color: #c5a475;
             color: #ffca34;
             animation: quake 0.4s;
             padding: $nav-header-height * 0.15 0;
@@ -266,6 +267,9 @@ header.nav {
             .ilist {
               display: flex !important;
               flex-direction: column;
+              .item {
+                background-color: #c5a475;
+              }
             }
             @keyframes quake {
               0% {
@@ -353,8 +357,12 @@ export default Vue.extend({
   methods: {
     isCurrentPage(ele) {
       const path = this.$route.path;
+      console.log(ele.link);
+      console.log(typeof ele.children);
       if (typeof ele.children === "undefined") {
+        console.log("hi");
         if (typeof ele.links === "undefined") return path === ele.link;
+        console.log("hi");
         let idx = ele.links.findIndex((x) => x === path);
         return path === ele.link || idx !== -1;
       }
