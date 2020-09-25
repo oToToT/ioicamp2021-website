@@ -45,7 +45,7 @@ a {
         font-weight: 300;
         font-family: "Noto Sans TC", sans-serif;
         display: inline-block;
-        min-width: 70px;
+        min-width: 85px;
         width: 20%;
         padding: 5px 10px;
         background: #333;
@@ -58,8 +58,8 @@ a {
         font-family: "Huninn", sans-serif;
         font-size: 1.2em;
         display: inline-block;
-        width: calc(80% - 50px);
-        max-width: calc(100% - 120px);
+        width: calc(80% - 65px);
+        max-width: calc(100% - 135px);
         background: transparent;
         border-top: none;
         border-left: none;
@@ -80,8 +80,8 @@ a {
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-          width: calc(80% - 80px);
-          max-width: calc(100% - 150px);
+          width: calc(80% - 95px);
+          max-width: calc(100% - 165px);
           border-bottom-color: #900000;
           background-image: url('/flat-2126885.svg');
           background-size: contain;
