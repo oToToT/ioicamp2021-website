@@ -2,7 +2,7 @@
 .container
   h1.title
     i.far.fa-calendar-alt
-    | &nbsp;課程主題
+    | &nbsp;活動日程
   .dates
     table
         tr

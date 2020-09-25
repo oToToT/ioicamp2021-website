@@ -36,7 +36,7 @@
       background: #fff;
       height: calc(100% - 70px - 1.5em);
       p {
-        font-weight: 100;
+        font-weight: 300;
         padding: 8px 0px;
         &:before {
           content: "\f105";
@@ -46,14 +46,14 @@
         }
         em,
         strong {
-          font-weight: 900;
+          font-weight: 700;
           text-decoration: underline;
           font-style: normal;
         }
         ins {
           text-decoration: none;
           color: #db6d42;
-          font-weight: 900;
+          font-weight: 700;
         }
       }
     }

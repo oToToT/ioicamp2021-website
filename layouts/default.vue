@@ -24,7 +24,7 @@ export default Vue.extend({
 }
 * {
   margin: 0;
-  font-family: "Huninn", "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", "Huninn", sans-serif;
 }
 .fa, .far, .fas {
   font-family: "Font Awesome 5 Free";
