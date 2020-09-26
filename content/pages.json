@@ -37,8 +37,18 @@
         "/signup/"
       ],
       "alternate": {
-        "name": "修改資料",
-        "link": "/edit/"
+        "name": "個人資料",
+        "link": "/user",
+        "children": [
+          {
+            "name": "修改資料",
+            "link": "/edit/"
+          },
+          {
+            "name": "　登出　",
+            "link": "/signout/"
+          }
+        ]
       }
     }
   ]

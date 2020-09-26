@@ -27,6 +27,23 @@ a {
 .section {
   background: #fff;
   padding: 25px 5vw 30px 5vw;
+  .message {
+    padding: 20px 30px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    &.success {
+      background-color: #67c95c;
+      border-color: #c4fca2;
+      color: #fff;
+    }
+    &.error {
+      background-color: #B81F00;
+      border-color: #8D021E;
+      color: #fff;
+    }
+    margin-bottom: 10px;
+  }
   h1,
   h2 {
     font-family: "Noto Serif TC", serif;
@@ -54,7 +71,7 @@ a {
         height: calc(1em + 10px);
       }
       textarea {
-        min-height: 200px;
+        min-height: 100px;
       }
       textarea,
       input[type="text"],
@@ -95,7 +112,7 @@ a {
           width: calc(80% - 40px);
           max-width: calc(100% - 160px);
           border-bottom-color: #900000;
-          background-image: url('/flat-2126885.svg');
+          background-image: url("/flat-2126885.svg");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: right center;
@@ -121,7 +138,7 @@ a {
           border-radius: 3px;
           border-width: 1px;
           border-style: solid;
-          border-color:  rgb(223, 173, 11);
+          border-color: rgb(223, 173, 11);
           &:hover {
             background-color: rgb(173, 133, 0);
             color: #fff;

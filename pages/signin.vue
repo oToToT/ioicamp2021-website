@@ -5,19 +5,27 @@
       i.fas.fa-chevron-right
       | &nbsp;登入
     .content
-      form#signin-form
+      form#signin-form(@submit.prevent="signin")
         label.input
           span
             i.far.fa-envelope
             | &nbsp;信箱
-          input(type="email", placeholder="nobugnolife@gmail.com")
+          input(
+            type="email",
+            placeholder="nobugnolife@gmail.com",
+            v-model="login.email"
+          )
         label.input
           span
             i.fas.fa-key
             | &nbsp;密碼
-          input(type="password", placeholder="your password")
+          input(
+            type="password",
+            placeholder="your password",
+            v-model="login.password"
+          )
         .right
-          button#signin-btn.submit 登入
+          button#signin-btn.submit(type="submit") 登入
     h2
       i.fas.fa-chevron-right
       | &nbsp;沒有帳號？
@@ -27,7 +35,7 @@
         | &nbsp;IOICamp 2021！
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 export default Vue.extend({
   head: {
@@ -39,6 +47,30 @@ export default Vue.extend({
         content: "Home page description",
       },
     ],
+  },
+  middleware: 'auth',
+  auth: 'guest',
+  data() {
+    return {
+      login: {
+        email: "",
+        password: "",
+      },
+    };
+  },
+  methods: {
+    async signin() {
+      try {
+        let response = await this.$auth.loginWith("IOICStrategy", {
+          data: this.login,
+        });
+        if (response.data.status !== 'success') {
+          this.$auth.$storage.setState('loggedIn', false);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 });
 </script>

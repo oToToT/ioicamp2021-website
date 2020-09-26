@@ -1,0 +1,113 @@
+<template lang="pug">
+.container
+  form-section
+    h1
+      i.fas.fa-chevron-right
+      | &nbsp;修改資料
+    .content
+      form#signin-form
+        label.input
+          span
+            i.far.fa-envelope
+            | &nbsp;信箱
+          input(
+            type="email",
+            placeholder="nobugnolife@gmail.com",
+            disabled,
+            v-model="userInfo['email']"
+          )
+        label.input
+          span
+            i.far.fa-user
+            | &nbsp;姓名
+          input(type="text", placeholder="電人王", v-model="userInfo['name']")
+        label.input
+          span
+            i.fas.fa-venus-mars
+            | &nbsp;性別
+          input(type="text", placeholder="男 / 女", v-model="userInfo['gender']")
+        label.input
+          span
+            i.fas.fa-school
+            | &nbsp;學校
+          input(type="text", placeholder="國立臺灣大學", v-model="userInfo['school']")
+        label.input
+          span
+            i.fas.fa-graduation-cap
+            | &nbsp;年級
+          input(type="text", placeholder="高中三年級", v-model="userInfo['grade']")
+        label.input
+          span
+            i.fas.fa-hourglass-half
+            | &nbsp;學程式的時間
+          input(type="text", placeholder="5 年以上", v-model="userInfo['code-time']")
+        label.input
+          span
+            i.fas.fa-history
+            | &nbsp;接觸競賽的時間
+          input(type="text", placeholder="1 年左右", v-model="userInfo['cp-time']")
+        label.input
+          span
+            i.fas.fa-trophy
+            | &nbsp;最自豪的獎項
+          input(type="text", placeholder="IOI 滿分金、IMO 滿分金", v-model="userInfo['prize']")
+        label.input
+          span
+            i.fas.fa-list-ul
+            | &nbsp;OJ IDs
+          input(type="text", placeholder="Topcoder, Codeforces, Atcoder...", v-model="userInfo['oj']")
+        label.input
+          span
+            i.fas.fa-align-left
+            | &nbsp;報名動機
+          textarea(placeholder="我想學會寫程式跟大家一起PK", v-model="userInfo['motivation']")
+        .right
+          button#signin-btn.submit 送出
+</template>
+
+<script>
+import Vue from "vue";
+export default Vue.extend({
+  head: {
+    title: "IOICcamp 2021 - 修改資料",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Home page description",
+      },
+    ],
+  },
+  middleware: "auth",
+  data() {
+    return {
+      userInfo: {
+        email: "",
+        name: "",
+        gender: "",
+        school: "",
+        grade: "",
+        "code-time": "",
+        "cp-time": "",
+        prize: "",
+        oj: "",
+        motivation: "",
+      },
+    };
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+.container {
+  padding-top: $nav-header-space + 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 50px;
+  @include with-mobile {
+    padding-top: $mobile-nav-header-space + 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+</style>

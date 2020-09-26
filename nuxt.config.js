@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -74,40 +73,52 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxt/content',
-    // '@nuxtjs/auth',
+    '@nuxtjs/auth',
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'http://linux11.csie.org:8787',
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    extractCSS: true,
+    transpile: ['@nuxtjs/auth'],
   },
   /*
   ** Router Configureation
   ** See https://nuxtjs.org/api/configuration-router/
   */
   router: {
-    // middleware: [ 'auth' ]
     trailingSlash: true,
   },
   /*
   ** Nuxt.js Auth Module
   */
   auth: {
-    // strategies: {
-    //   local: {
-    //     endpoints: {
-    //       login: { url: '/api/auth/login', method: 'post' },
-    //       logout: { url: '/api/auth/logout', method: 'post' },
-    //     },
-    //     tokenRequired: false,
-    //     tokenType: false
-    //   }
-    // }
+    redirect: {
+      login: '/signin/',
+      logout: false,
+      home: '/',
+    },
+    rewriteRedirects: true,
+    strategies: {
+      IOICStrategy: {
+        _scheme: '~/schemes/IOICScheme',
+        endpoints: {
+          login: {
+            url: '/api/login',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: false,
+        },
+      }
+    }
   },
 }

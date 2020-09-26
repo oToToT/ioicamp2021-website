@@ -104,7 +104,8 @@ header.nav {
       top: ($nav-header-height * -0.8);
       transform: scale($nav-header-height / 50px);
       @include with-mobile {
-        display: none;
+        top: 2px;
+        padding-left: 10px;
       }
     }
     .icon > img {
@@ -350,39 +351,38 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      pages_raw: [],
-      signined: false,
+      raw_pages: [],
     };
   },
   computed: {
-    pages() {
-      let pages = [];
-      for (let page of this.pages_raw) {
-        if (typeof page.alternate === "undefined") pages.push(page);
-        else {
-          if (this.signined) pages.push(page.alternate);
-          else pages.push(page);
-        }
-      }
-      return pages;
-    },
     current_page_name() {
       const path = this.$route.path;
       for (let page of this.pages) {
-        if (typeof page.children === 'undefined') {
+        if (typeof page.children === "undefined") {
           continue;
         }
         for (let sub of page.children) {
-          if (path === page.link + sub.link)
-            return sub.name;
+          if (path === page.link + sub.link) return sub.name;
         }
       }
       return "";
     },
+    pages() {
+      let parsed = [];
+      for (let page of this.raw_pages) {
+        if (typeof page.alternate === "undefined") parsed.push(page);
+        else {
+          if (this.$auth.loggedIn) parsed.push(page.alternate);
+          else parsed.push(page);
+        }
+      }
+      return parsed;
+    },
   },
   async fetch() {
     const { pages } = await this.$content("pages").fetch();
-    this.pages_raw = pages;
+
+    this.raw_pages = pages;
   },
   mounted() {},
   methods: {
