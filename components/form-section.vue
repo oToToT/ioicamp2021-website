@@ -45,21 +45,26 @@ a {
         font-weight: 300;
         font-family: "Noto Sans TC", sans-serif;
         display: inline-block;
-        min-width: 85px;
+        min-width: 100px;
         width: 20%;
         padding: 5px 10px;
         background: #333;
         color: #e0e0e0;
         margin-right: 10px !important;
+        height: calc(1em + 10px);
       }
+      textarea {
+        min-height: 200px;
+      }
+      textarea,
       input[type="text"],
       input[type="email"],
       input[type="password"] {
         font-family: "Huninn", sans-serif;
         font-size: 1.2em;
         display: inline-block;
-        width: calc(80% - 65px);
-        max-width: calc(100% - 135px);
+        width: calc(80% - 10px);
+        max-width: calc(100% - 110px);
         background: transparent;
         border-top: none;
         border-left: none;
@@ -68,26 +73,61 @@ a {
         border-bottom-style: solid;
         border-bottom-color: #000;
         border-radius: 0;
+        box-shadow: none;
         outline: none;
         &:focus {
           border-bottom-width: 2px;
+        }
+        &.has-right {
+          width: calc(80% - 60px);
+          max-width: calc(100% - 180px);
+          padding-right: 61px;
         }
       }
       &.error {
         span {
           background-color: #900000;
         }
+        textarea,
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-          width: calc(80% - 95px);
-          max-width: calc(100% - 165px);
+          width: calc(80% - 40px);
+          max-width: calc(100% - 160px);
           border-bottom-color: #900000;
           background-image: url('/flat-2126885.svg');
           background-size: contain;
           background-repeat: no-repeat;
           background-position: right center;
           padding-right: 30px;
+        }
+      }
+      .zero-relative {
+        position: relative;
+        width: 0;
+        height: 0;
+        & > * {
+          position: absolute;
+        }
+      }
+      .zero-relative.trigger {
+        right: 60px;
+        .btn {
+          cursor: pointer;
+          color: rgb(223, 173, 11);
+          width: 55px;
+          padding: 2px 0;
+          text-align: center;
+          border-radius: 3px;
+          border-width: 1px;
+          border-style: solid;
+          border-color:  rgb(223, 173, 11);
+          &:hover {
+            background-color: rgb(173, 133, 0);
+            color: #fff;
+            border-color: #fff;
+            transition: 0.3s;
+          }
         }
       }
     }
