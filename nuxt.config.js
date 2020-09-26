@@ -117,6 +117,10 @@ export default {
             propertyName: 'token',
           },
           logout: false,
+          user: {
+            url: '/api/users/apply-form',
+            method: 'get',
+          }
         },
       }
     }

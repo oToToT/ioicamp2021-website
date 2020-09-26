@@ -1,11 +1,12 @@
 <template lang="pug">
 .container
   form-section
+    #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
       i.fas.fa-chevron-right
       | &nbsp;修改資料
     .content
-      form#signin-form
+      form#signin-form(@submit.prevent="updateInfo")
         label.input
           span
             i.far.fa-envelope
@@ -82,19 +83,27 @@ export default Vue.extend({
   data() {
     return {
       userInfo: {
-        email: "",
-        name: "",
-        gender: "",
-        school: "",
-        grade: "",
-        "code-time": "",
-        "cp-time": "",
-        prize: "",
-        oj: "",
-        motivation: "",
+        email: this.$auth.user.email,
+        ...this.$auth.user.applyForm
+      },
+      popout: {
+        msg: "",
+        status: "",
       },
     };
   },
+  methods: {
+    async updateInfo() {
+      try {
+        const res = await this.$axios.$put('/api/users/apply-form', this.userInfo);
+        this.popout.msg = '成功紀錄了。'
+        this.popout.status = 'success';
+      } catch(e) {
+        this.popout.msg = '我們伺服器怪怪的，請跟我們聯絡 TAT'
+        this.popout.status = 'error';
+      }
+    }
+  }
 });
 </script>
 

@@ -100,6 +100,9 @@ a {
           max-width: calc(100% - 180px);
           padding-right: 61px;
         }
+        &[disabled] {
+          background-color: #ddd;
+        }
       }
       &.error {
         span {

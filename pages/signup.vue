@@ -113,7 +113,7 @@ export default Vue.extend({
         return;
       }
       try {
-        const response = await this.$axios.post("/api/register", this.account);
+        const response = await this.$axios.$post("/api/register", this.account);
         this.popout.msg = "註冊成功，請重新登入!";
         this.popout.status = "success";
       } catch (e) {
