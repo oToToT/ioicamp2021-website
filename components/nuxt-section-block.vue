@@ -1,6 +1,8 @@
 <template lang="pug">
 .section-block
-  h2 {{ document.title }}
+  .section-header
+    h2 {{ document.title }}
+    label(v-if="date") {{ (new Date(document.createdAt)).toLocaleString('zh-TW') }}
   nuxt-content(:document="document")
 </template>
 
@@ -15,6 +17,10 @@ export default Vue.extend({
         title: '',
       },
     },
+    date: {
+      type: Boolean,
+      default: false
+    }
   },
 });
 </script>

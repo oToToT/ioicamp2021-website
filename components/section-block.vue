@@ -1,7 +1,8 @@
 <template lang="pug">
 .section-block
-  h2
-    slot(name="title")
+  .section-header
+    h2
+      slot(name="title")
   .content
     slot
 </template>
