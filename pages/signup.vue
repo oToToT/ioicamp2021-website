@@ -150,7 +150,7 @@ export default Vue.extend({
         } else if (e.response.data.error === "User already exists") {
           this.popout.msg = "怎麼辦? 信箱被註冊走了耶";
         }
-        scrollToTop();
+        this.scrollToTop();
       }
     },
   },
