@@ -9,10 +9,6 @@ export default Vue.extend({});
 </script>
 
 <style lang="scss" scoped>
-.background {
-  background-color: $default-background-color;
-  min-height: 100vh;
-}
 a {
   color: #db6d42;
   text-decoration: none;

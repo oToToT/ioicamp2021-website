@@ -34,12 +34,12 @@ body {
 .background {
   background-color: $footer-color;
   min-height: 100vh;
-}
-#base {
-  min-height: 94vh;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.25),
       rgba(0, 0, 0, 0.25)
     ), url('/background.png');
+}
+#base {
+  min-height: 94vh;
 }
 </style>
