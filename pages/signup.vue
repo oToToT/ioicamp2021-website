@@ -101,6 +101,8 @@ export default Vue.extend({
         this.popout.status = "error";
         if (e.response.data.error === "Request too fast") {
           this.popout.msg = "不要一直戳我拉 QwQ";
+        } else if (e.response.data.error === "Unknown error") {
+          this.popout.msg = "這個信箱有問題耶，請確認一下";
         } else {
           this.popout.msg = "我們伺服器可能燒起來了，請聯繫我們 !";
         }
@@ -116,6 +118,12 @@ export default Vue.extend({
         const response = await this.$axios.$post("/api/register", this.account);
         this.popout.msg = "註冊成功，請重新登入!";
         this.popout.status = "success";
+        const loginResponse = await this.$auth.loginWith("IOICStrategy", {
+          data: {
+            email: this.account.email,
+            password: this.account.password
+          },
+        });
       } catch (e) {
         this.popout.status = "error";
         if (e.response.data.error === "Token not found") {
