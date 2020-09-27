@@ -72,11 +72,14 @@ export default Vue.extend({
         });
       } catch (e) {
         this.popout.status = 'error';
-        if (e.response.data.error === "User not found") {
+        if (!e.response || !e.response.data) {
+          this.popout.msg = "好像壞掉了，請跟我們聯絡 Q_Q";
+        } else if (e.response.data.error === "User not found") {
           this.popout.msg = '帳號或密碼錯誤~';
         } else {
           this.popout.msg = '不知道發生什麼事了，可以聯絡我們嗎?';
         }
+        window.scrollTo(0, 0);
       }
     },
   },

@@ -101,7 +101,9 @@ export default Vue.extend({
         this.popout.status = "success";
       } catch (e) {
         this.popout.status = "error";
-        if (e.response.data.error === "Request too fast") {
+        if (!e.response || !e.response.data) {
+          this.popout.msg = "好像壞掉了，請跟我們聯絡 Q_Q";
+        } else if (e.response.data.error === "Request too fast") {
           this.popout.msg = "不要一直戳我拉 QwQ";
         } else if (e.response.data.error === "Unknown error") {
           this.popout.msg = "這個信箱有問題耶，請確認一下";
@@ -130,7 +132,9 @@ export default Vue.extend({
         });
       } catch (e) {
         this.popout.status = "error";
-        if (e.response.data.error === "Token not found") {
+        if (!e.response || !e.response.data) {
+          this.popout.msg = "好像壞掉了，請跟我們聯絡 Q_Q";
+        } else if (e.response.data.error === "Token not found") {
           this.popout.msg = "「信箱驗證碼」有填對嗎？";
         } else if (e.response.data.error === "User already exists") {
           this.popout.msg = "怎麼辦? 信箱被註冊走了耶";
