@@ -31,7 +31,7 @@
       "link": "/about/"
     },
     {
-      "name": "<i class='fas fa-sign-in-alt'></i>&nbsp;&nbsp;登入",
+      "name": "登入 / 報名",
       "link": "/signin/",
       "links": [
         "/signup/"
