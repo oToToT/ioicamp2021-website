@@ -1,8 +1,5 @@
 <template lang="pug">
 .container
-  //- h1.title
-  //-   i.fas.fa-dragon
-  //-   | &nbsp;師資陣容
   .teachers
     .teacher(v-for="teacher in teachers", :key="teacher.slug")
       .image
@@ -68,7 +65,6 @@ export default Vue.extend({
         padding: 5px 10px;
       }
       .intro {
-        width: 70%;
         padding: 15px 20px;
         .name {
           font-size: 1.5em;
@@ -97,7 +93,6 @@ export default Vue.extend({
         }
       }
       .image {
-        width: 30%;
         &::before {
           // vertical centering from
           // http://csscoke.com/2018/08/21/css-vertical-align/
@@ -119,12 +114,23 @@ export default Vue.extend({
       &:last-of-type {
         margin-bottom: 30px;
       }
-    }
-    .teacher:nth-child(odd) {
-      flex-direction: row-reverse;
-    }
-    .teacher:nth-child(even) {
-      flex-direction: row;
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+        .image {
+          text-align: right;
+          width: 30%;
+        }
+        .intro {
+          width: 70%;
+        }
+      }
+      &:nth-child(even) {
+        flex-direction: row;
+        text-align: left;
+        .image {
+          text-align: left;
+        }
+      }
     }
   }
   .cutter {
