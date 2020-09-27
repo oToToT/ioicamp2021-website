@@ -108,7 +108,8 @@ export default {
     },
     rewriteRedirects: true,
     strategies: {
-      local: {
+      IOICStrategy: {
+        _scheme: '~/schemes/IOICScheme',
         endpoints: {
           login: {
             url: '/api/login',

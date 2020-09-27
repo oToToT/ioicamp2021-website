@@ -92,7 +92,7 @@ export default Vue.extend({
   methods: {
     async getToken() {
       try {
-        const response = await this.$axios.$post("/api/get-verification-token", {
+        const response = await this.$axios.post("/api/get-verification-token", {
           email: this.account.email,
         });
         this.popout.msg = "趕快去收驗證信吧！";
