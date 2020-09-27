@@ -42,6 +42,11 @@ a {
       border-color: #8D021E;
       color: #fff;
     }
+    &.info {
+      background-color: rgb(17, 143, 228);
+      border-color: rgb(0, 49, 185);
+      color: #fff;
+    }
     margin-bottom: 10px;
   }
   h1,

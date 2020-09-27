@@ -99,6 +99,8 @@ export default Vue.extend({
   },
   methods: {
     async updateInfo() {
+      this.popout.msg = "儲存中...";
+      this.popout.status = "info";
       try {
         const res = await this.$axios.$put('/api/users/apply-form', this.userInfo);
         this.popout.msg = '成功紀錄了。'

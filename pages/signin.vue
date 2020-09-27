@@ -64,6 +64,8 @@ export default Vue.extend({
   },
   methods: {
     async signin() {
+      this.popout.msg = "登入中...";
+      this.popout.status = "info";
       try {
         let response = await this.$auth.loginWith("IOICStrategy", {
           data: this.login,
