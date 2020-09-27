@@ -26,6 +26,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { property: 'og:title', content: 'IOICamp 2021 程式解題競賽集訓營' },
+      { property: 'og:url', content: 'https://ioicamp.org' },
+      { property: 'og:image', content: 'https://ioicamp.org/ioicamp-04.png' },
     ],
     htmlAttrs: {
       lang: 'zh-TW',
