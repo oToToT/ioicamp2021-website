@@ -5,7 +5,7 @@
       img.maximg(src="/dbodkck4.png")
     .inner
       .titles
-        h1 No Bug No Life
+        h1 No Bug<wbr>No Life
         h2 2021 程式解題競賽集訓營
         h3 「連便當工人都是國手的實力派營隊」
       step-button(:href="nextStep.link" style="font-size:1.2em;") {{ nextStep.text }}
@@ -29,17 +29,18 @@ export default Vue.extend({
 .columns {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .container {
   background-color: rgba(0, 0, 0, 0);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 60vh;
   display: flex;
+  min-height: 60vh;
   padding-left: 5vw;
   padding-right: 5vw;
-  margin: 0 10px;
+  padding-bottom: 5vh;
 }
 .maximg {
   max-width: 100%;
