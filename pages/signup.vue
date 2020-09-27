@@ -90,6 +90,14 @@ export default Vue.extend({
     },
   },
   methods: {
+    scrollToTop() {
+      let currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        scrollTo(0, currentScroll - currentScroll / 5);
+        requestAnimationFrame(this.scrollToTop);
+      }
+    },
     async getToken() {
       this.popout.msg = "獲得驗證信中...";
       this.popout.status = "info";
@@ -111,11 +119,13 @@ export default Vue.extend({
           this.popout.msg = "我們伺服器可能燒起來了，請聯繫我們 !";
         }
       }
+      scrollToTop();
     },
     async signup() {
       if (!this.samePassword) {
         this.popout.msg = "請確認密碼是否相同呦~";
         this.popout.status = "error";
+        scrollToTop();
         return;
       }
       this.popout.msg = "註冊中...";
@@ -124,6 +134,7 @@ export default Vue.extend({
         const response = await this.$axios.$post("/api/register", this.account);
         this.popout.msg = "註冊成功!";
         this.popout.status = "success";
+        scrollToTop();
         const loginResponse = await this.$auth.loginWith("IOICStrategy", {
           data: {
             email: this.account.email,
@@ -139,6 +150,7 @@ export default Vue.extend({
         } else if (e.response.data.error === "User already exists") {
           this.popout.msg = "怎麼辦? 信箱被註冊走了耶";
         }
+        scrollToTop();
       }
     },
   },

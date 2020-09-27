@@ -79,7 +79,6 @@ export default Vue.extend({
         } else {
           this.popout.msg = '不知道發生什麼事了，可以聯絡我們嗎?';
         }
-        window.scrollTo(0, 0);
       }
     },
   },

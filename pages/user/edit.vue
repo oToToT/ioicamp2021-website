@@ -31,7 +31,11 @@
           span
             i.fas.fa-school
             | &nbsp;學校
-          input(type="text", placeholder="國立臺灣大學", v-model="userInfo['school']")
+          input(
+            type="text",
+            placeholder="國立臺灣大學",
+            v-model="userInfo['school']"
+          )
         label.input
           span
             i.fas.fa-graduation-cap
@@ -41,32 +45,55 @@
           span
             i.fas.fa-hourglass-half
             | &nbsp;學程式的時間
-          input(type="text", placeholder="5 年以上", v-model="userInfo['code-time']")
+          input(
+            type="text",
+            placeholder="5 年以上",
+            v-model="userInfo['code-time']"
+          )
         label.input
           span
             i.fas.fa-history
             | &nbsp;接觸競賽的時間
-          input(type="text", placeholder="1 年左右", v-model="userInfo['cp-time']")
+          input(
+            type="text",
+            placeholder="1 年左右",
+            v-model="userInfo['cp-time']"
+          )
         label.input
           span
             i.fas.fa-trophy
             | &nbsp;最自豪的獎項
-          input(type="text", placeholder="IOI 滿分金、IMO 滿分金", v-model="userInfo['prize']")
+          input(
+            type="text",
+            placeholder="IOI 滿分金、IMO 滿分金",
+            v-model="userInfo['prize']"
+          )
         label.input
           span
             i.fas.fa-list-ul
             | &nbsp;OJ IDs
-          input(type="text", placeholder="Topcoder, Codeforces, Atcoder...", v-model="userInfo['oj']")
+          input(
+            type="text",
+            placeholder="Topcoder, Codeforces, Atcoder...",
+            v-model="userInfo['oj']"
+          )
         label.input
           span
             i.fas.fa-align-left
             | &nbsp;報名動機
-          textarea(placeholder="我想學會寫程式跟大家一起PK", v-model="userInfo['motivation']")
+          textarea(
+            placeholder="我想學會寫程式跟大家一起PK",
+            v-model="userInfo['motivation']"
+          )
         label.input
           span
             i.fas.fa-book
             | &nbsp;備註
-          input(type="text", placeholder="我要睡電腦教室", v-model="userInfo['comment']")
+          input(
+            type="text",
+            placeholder="我要睡電腦教室",
+            v-model="userInfo['comment']"
+          )
         .right
           button#signin-btn.submit 儲存
 </template>
@@ -89,7 +116,7 @@ export default Vue.extend({
     return {
       userInfo: {
         email: this.$auth.user.email,
-        ...this.$auth.user.applyForm
+        ...this.$auth.user.applyForm,
       },
       popout: {
         msg: "",
@@ -98,22 +125,33 @@ export default Vue.extend({
     };
   },
   methods: {
+    scrollToTop() {
+      let currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        scrollTo(0, currentScroll - currentScroll / 5);
+        requestAnimationFrame(this.scrollToTop);
+      }
+    },
     async updateInfo() {
       this.popout.msg = "儲存中...";
       this.popout.status = "info";
       try {
-        const res = await this.$axios.$put('/api/users/apply-form', this.userInfo);
-        this.popout.msg = '成功紀錄了。'
-        this.popout.status = 'success';
-        window.scrollTo(0, 0);
+        const res = await this.$axios.$put(
+          "/api/users/apply-form",
+          this.userInfo
+        );
+        this.popout.msg = "成功紀錄了。";
+        this.popout.status = "success";
+        this.scrollToTop();
         await this.$auth.fetchUser();
-      } catch(e) {
-        this.popout.msg = '我們伺服器怪怪的，請跟我們聯絡 TAT'
-        this.popout.status = 'error';
-        window.scrollTo(0, 0);
+      } catch (e) {
+        this.popout.msg = "我們伺服器怪怪的，請跟我們聯絡 TAT";
+        this.popout.status = "error";
+        this.scrollToTop();
       }
-    }
-  }
+    },
+  },
 });
 </script>
 
