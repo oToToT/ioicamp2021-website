@@ -63,9 +63,18 @@ export default Vue.extend({
     };
   },
   methods: {
+    scrollToTop() {
+      let currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        scrollTo(0, currentScroll - currentScroll / 5);
+        requestAnimationFrame(this.scrollToTop);
+      }
+    },
     async signin() {
       this.popout.msg = "登入中...";
       this.popout.status = "info";
+      this.scrollToTop();
       try {
         let response = await this.$auth.loginWith("IOICStrategy", {
           data: this.login,
