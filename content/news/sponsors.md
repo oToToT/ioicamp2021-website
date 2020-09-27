@@ -1,5 +1,5 @@
 ---
-title: "Sponsors"
+title: "贊助"
 prio: -100
 ---
 

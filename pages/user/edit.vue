@@ -68,7 +68,7 @@
             | &nbsp;備註
           input(type="text", placeholder="我要睡電腦教室", v-model="userInfo['comment']")
         .right
-          button#signin-btn.submit 送出
+          button#signin-btn.submit 儲存
 </template>
 
 <script>
