@@ -75,7 +75,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "IOICcamp 2021 - 修改資料",
+    title: "IOICamp 2021 - 修改資料",
     meta: [
       {
         hid: "description",

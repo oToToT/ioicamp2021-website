@@ -5,7 +5,7 @@
       img.maximg(src="/dbodkck4.png")
     .inner
       .titles
-        h1 No Bug<wbr>No Life
+        h1 No Bug <wbr>No Life
         h2 2021 程式解題競賽集訓營
         h3 「連便當工人都是國手的實力派營隊」
       step-button(:href="nextStep.link" style="font-size:1.2em;") {{ nextStep.text }}
