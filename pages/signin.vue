@@ -68,9 +68,6 @@ export default Vue.extend({
         let response = await this.$auth.loginWith("IOICStrategy", {
           data: this.login,
         });
-        if (response.data.status !== 'success') {
-          this.$auth.$storage.setState('loggedIn', false);
-        }
       } catch (e) {
         this.popout.status = 'error';
         if (e.response.data.error === "User not found") {
