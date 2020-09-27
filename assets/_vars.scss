@@ -14,8 +14,3 @@ $mobile-width: 1023px;
     @content;
   }
 }
-body {
-  @include with-not-mobile {
-    font-size: 125%;
-  }
-}
