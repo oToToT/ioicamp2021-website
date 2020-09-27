@@ -1,6 +1,7 @@
 <template lang="pug">
 .container
   form-section
+    #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
       i.fas.fa-chevron-right
       | &nbsp;登入
@@ -56,19 +57,27 @@ export default Vue.extend({
         email: "",
         password: "",
       },
+      popout: {
+        msg: "",
+        status: "",
+      },
     };
   },
   methods: {
     async signin() {
       try {
-        let response = await this.$auth.loginWith("IOICStrategy", {
+        let response = await this.$auth.loginWith("local", {
           data: this.login,
         });
-        if (response.data.status !== 'success') {
-          this.$auth.$storage.setState('loggedIn', false);
+        console.log(response.data);
+        console.log(this.$auth.loggedIn)
+      } catch (e) {
+        this.popout.status = 'error';
+        if (e.response.data.error === "User not found") {
+          this.popout.msg = '帳號或密碼錯誤~';
+        } else {
+          this.popout.msg = '不知道發生什麼事了，可以聯絡我們嗎?';
         }
-      } catch (err) {
-        console.log(err);
       }
     },
   },
