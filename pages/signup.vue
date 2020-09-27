@@ -102,7 +102,7 @@ export default Vue.extend({
         if (e.response.data.error === "Request too fast") {
           this.popout.msg = "不要一直戳我拉 QwQ";
         } else if (e.response.data.error === "Unknown error") {
-          this.popout.msg = "我們寄不出信了，請跟我們連繫@@";
+          this.popout.msg = "這個信箱有問題耶，請確認一下";
         } else {
           this.popout.msg = "我們伺服器可能燒起來了，請聯繫我們 !";
         }
