@@ -98,7 +98,7 @@ a {
         box-shadow: none;
         outline: none;
         &::placeholder {
-          color: #ddd;
+          color: #aaa;
         }
         &:focus {
           border-bottom-width: 2px;
