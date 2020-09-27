@@ -105,7 +105,7 @@ export default Vue.extend({
         const res = await this.$axios.$put('/api/users/apply-form', this.userInfo);
         this.popout.msg = '成功紀錄了。'
         this.popout.status = 'success';
-        setTimeout(()=>location.reload(), 1000);
+        await this.$auth.fetchUser();
       } catch(e) {
         this.popout.msg = '我們伺服器怪怪的，請跟我們聯絡 TAT'
         this.popout.status = 'error';
