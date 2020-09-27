@@ -1,12 +1,9 @@
 name: 資料結構初階
 preknowledge:
-  - 基礎程式語法
-  - 陣列
-  - 指標
-  - 呼吸
+  - 圖和樹的基本概念
 abstract:
-  - C++ STL
-  - 並查集=DSU
-  - 數狀樹組=BIT=Fenwick tree
-  - 線段樹=segment tree
+  - 線段樹
+  - BIT
+  - Treap
+  - 持久化資料結構(並查集、Treap、線段樹)
 
