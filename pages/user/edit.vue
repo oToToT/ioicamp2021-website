@@ -68,7 +68,7 @@
             | &nbsp;備註
           input(type="text", placeholder="我要睡電腦教室", v-model="userInfo['comment']")
         .right
-          button#signin-btn.submit 送出
+          button#signin-btn.submit 儲存
 </template>
 
 <script>
@@ -105,6 +105,7 @@ export default Vue.extend({
         const res = await this.$axios.$put('/api/users/apply-form', this.userInfo);
         this.popout.msg = '成功紀錄了。'
         this.popout.status = 'success';
+        setTimeout(()=>location.reload(), 1000);
       } catch(e) {
         this.popout.msg = '我們伺服器怪怪的，請跟我們聯絡 TAT'
         this.popout.status = 'error';

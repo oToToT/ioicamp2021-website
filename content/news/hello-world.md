@@ -1,5 +1,5 @@
 ---
-title: "How to Improve"
+title: "如何進步"
 prio: 0
 ---
 
