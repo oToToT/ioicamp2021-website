@@ -2,7 +2,7 @@
   "pages": [
     {
       "name": "最新消息",
-      "link": "/news/"
+      "link": "/"
     },
     {
       "name": "活動簡章",

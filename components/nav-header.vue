@@ -78,7 +78,7 @@ header.nav {
   z-index: 9999;
   top: 0;
   width: 100vw;
-  background-color: $default-background-color;
+  background-color: #4c7084;
   @include with-mobile {
     padding-top: 0px;
   }
@@ -209,8 +209,8 @@ header.nav {
             animation: none;
           }
         }
-        &.active,
-        &.nuxt-link-active {
+        &.active
+       {
           background-color: #e5a54d;
           color: #f6ea25;
           @include with-mobile {

@@ -37,6 +37,9 @@ body {
 }
 #base {
   min-height: 94vh;
-  background-color: $default-background-color;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ), url('/background.png');
 }
 </style>

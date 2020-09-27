@@ -1,10 +1,14 @@
 <template lang="pug">
 .container
-  .inner
-    .titles
-      h1 No Bug No Life
-      h2 2021 程式解題競賽集訓營
-    step-button(:href="nextStep.link" style="font-size:1.2em;") {{ nextStep.text }}
+  .columns
+    .inner
+      img.maximg(src="/dbodkck4.png")
+    .inner
+      .titles
+        h1 No Bug No Life
+        h2 2021 程式解題競賽集訓營
+        h3 「連便當工人都是國手的實力派營隊」
+      step-button(:href="nextStep.link" style="font-size:1.2em;") {{ nextStep.text }}
 </template>
 
 <script lang="ts">
@@ -13,7 +17,7 @@ export default Vue.extend({
   data() {
     return {
       nextStep: {
-        link: '/signup',
+        link: '/signin',
         text: '立即報名',
       },
     }
@@ -22,17 +26,30 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.columns {
+  display: flex;
+  align-items: center;
+}
 .container {
-  background-image: url('/background.png');
+  background-color: rgba(0, 0, 0, 0);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 60vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin: 0 10px;
+}
+.maximg {
+  max-width: 100%;
+  max-height: 100%;
 }
 .inner {
+  width: 100%;
+  @include with-not-mobile {
+    width: calc(50% - 8px);
+  }
   text-align: center;
   .titles {
     margin-bottom: 5vh !important;
