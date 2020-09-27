@@ -17,7 +17,7 @@ export default Vue.extend({
   data() {
     return {
       nextStep: {
-        link: '/signin',
+        link: '/signin/',
         text: '立即報名',
       },
     }
