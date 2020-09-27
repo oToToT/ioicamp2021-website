@@ -108,8 +108,7 @@ export default {
     },
     rewriteRedirects: true,
     strategies: {
-      IOICStrategy: {
-        _scheme: '~/schemes/IOICScheme',
+      local: {
         endpoints: {
           login: {
             url: '/api/login',
@@ -117,6 +116,10 @@ export default {
             propertyName: 'token',
           },
           logout: false,
+          user: {
+            url: '/api/users/apply-form',
+            method: 'get',
+          }
         },
       }
     }
