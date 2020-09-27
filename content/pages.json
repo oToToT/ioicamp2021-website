@@ -45,6 +45,10 @@
             "link": "/edit/"
           },
           {
+            "name": "變更密碼",
+            "link": "/changePassword/"
+          },
+          {
             "name": "　登出　",
             "link": "/signout/"
           }
