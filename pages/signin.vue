@@ -13,7 +13,7 @@
             | &nbsp;信箱
           input(
             type="email",
-            placeholder="nobugnolife@gmail.com",
+            placeholder="nobugnolife@ioicamp.org",
             v-model="login.email"
           )
         label.input
