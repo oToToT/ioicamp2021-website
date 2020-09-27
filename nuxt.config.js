@@ -104,7 +104,7 @@ export default {
     redirect: {
       login: '/signin/',
       logout: false,
-      home: '/edit/',
+      home: '/user/edit/',
     },
     rewriteRedirects: true,
     strategies: {
