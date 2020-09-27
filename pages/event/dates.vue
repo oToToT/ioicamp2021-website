@@ -7,42 +7,41 @@
     table
         tr
           th
-          th 1/19 (日)
-          th 1/20 (一)
-          th 1/21 (二)
-          th 1/22 (三)
-          th 1/23 (四)
+          th 1/27 (三)
+          th 1/28 (四)
+          th 1/29 (五)
+          th 1/30 (六)
+          th 1/31 (日)
         tr
           td 08:30~09:00
-          td(colspan="1")  
+          td(rowspan="2") 報到
           td(colspan="4") 集合 / 早餐
         tr
           td 09:00~10:00
-          td 報到
-          td(rowspan="2") 資料結構初階
           td(rowspan="2") 字串
-          td(rowspan="2") 資料結構進階
-          td(rowspan="1") 團體照/賽前準備
+          td(rowspan="2") 網路流
+          td(rowspan="2") 組合賽局
+          td(rowspan="1") 彈性時間
         tr
           td 10:00~12:20
-          td(rowspan="1") 電腦結構與常數優化
+          td(rowspan="1") 喵喵時間
           td(rowspan="5") 正式賽
         tr
           td 12:30~13:30
-          td(colspan="4") 午餐
+          td(colspan="4") 午餐 / 交流
         tr
-          td 13:30~14:00
-          td(rowspan="5") 動態規劃跟圖論
-          td(rowspan="2" colspan="3") 彈性時間
+          td 13:30~14:00 
+          td(rowspan="2" colspan="4") 彈性時間
         tr
           td 14:00~14:30
         tr
           td 14:30~15:00
+          td(rowspan="3") 圖論
+          td(rowspan="3") 資料結構
+          td(rowspan="3") 動態規劃
           td(rowspan="3") 數學
-          td(rowspan="3") 隨機、近似
-          td(rowspan="3") 根號算法
         tr
-          td 14:30~16:00
+          td 15:00~16:00
           td 頒獎時間
         tr
           td 16:00~17:50
