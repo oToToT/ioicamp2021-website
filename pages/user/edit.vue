@@ -62,6 +62,11 @@
             i.fas.fa-align-left
             | &nbsp;報名動機
           textarea(placeholder="我想學會寫程式跟大家一起PK", v-model="userInfo['motivation']")
+        label.input
+          span
+            i.fas.fa-book
+            | &nbsp;備註
+          input(type="text", placeholder="我要睡電腦教室", v-model="userInfo['comment']")
         .right
           button#signin-btn.submit 送出
 </template>

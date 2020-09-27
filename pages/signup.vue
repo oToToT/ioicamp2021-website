@@ -91,6 +91,8 @@ export default Vue.extend({
   },
   methods: {
     async getToken() {
+      this.popout.msg = "趕快去收驗證信吧！";
+        this.popout.status = "success";
       try {
         const response = await this.$axios.post("/api/get-verification-token", {
           email: this.account.email,
@@ -116,7 +118,7 @@ export default Vue.extend({
       }
       try {
         const response = await this.$axios.$post("/api/register", this.account);
-        this.popout.msg = "註冊成功，請重新登入!";
+        this.popout.msg = "註冊成功!";
         this.popout.status = "success";
         const loginResponse = await this.$auth.loginWith("IOICStrategy", {
           data: {

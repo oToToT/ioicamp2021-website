@@ -92,6 +92,9 @@ a {
         border-radius: 0;
         box-shadow: none;
         outline: none;
+        &::placeholder {
+          color: #ddd;
+        }
         &:focus {
           border-bottom-width: 2px;
         }
