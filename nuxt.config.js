@@ -25,7 +25,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { hid: 'description', name: 'description', content: 'IOICamp 2021 程式解題競賽集訓營 - 「連便當工人都是國手的實力派營隊」' },
       { property: 'og:title', content: 'IOICamp 2021 程式解題競賽集訓營' },
       { property: 'og:url', content: 'https://ioicamp.org' },
       { property: 'og:image', content: 'https://ioicamp.org/ioicamp-04.png' },
@@ -83,7 +83,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://api.ioicamp.org',
+    baseURL: 'http://linux11.csie.org:8787',
   },
   /*
   ** Build configuration

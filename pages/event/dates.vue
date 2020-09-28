@@ -30,7 +30,7 @@
           td 12:30~13:30
           td(colspan="4") 午餐 / 交流
         tr
-          td 13:30~14:00 
+          td 13:30~14:00
           td(rowspan="2" colspan="4") 彈性時間
         tr
           td 14:00~14:30
@@ -61,10 +61,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: 'IOICamp 2021 - 集訓內容',
-    meta: [
-      { hid: 'description', name: 'description', content: 'Home page description' }
-    ],
+    title: '集訓內容 | IOICamp 2021',
   },
 });
 </script>

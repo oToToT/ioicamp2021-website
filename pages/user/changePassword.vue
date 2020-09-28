@@ -42,14 +42,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "IOICamp 2021 - 變更密碼",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Home page description",
-      },
-    ],
+    title: "變更密碼 | IOICamp 2021",
   },
   middleware: "auth",
   data() {

@@ -10,14 +10,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "IOICamp 2021",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Home page description",
-      },
-    ],
+    title: "404 Not Found | IOICamp 2021",
   },
   props: ['error'],
   computed: {
