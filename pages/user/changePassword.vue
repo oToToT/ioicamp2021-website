@@ -42,7 +42,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "變更密碼 | IOICamp 2021",
+    title: "變更密碼",
   },
   middleware: "auth",
   data() {

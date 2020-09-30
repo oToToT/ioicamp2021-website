@@ -9,8 +9,10 @@
 <script>
 import Vue from "vue";
 export default Vue.extend({
-  head: {
-    title: "404 Not Found | IOICamp 2021",
+  head() {
+    return {
+      title: this.errorMessage,
+    }
   },
   props: ['error'],
   computed: {
@@ -23,7 +25,7 @@ export default Vue.extend({
       }
       return "糟糕，難道有蟲嗎!?";
     }
-  }
+  },
 });
 </script>
 

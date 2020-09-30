@@ -44,7 +44,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "集訓內容 | IOICamp 2021",
+    title: "集訓內容",
   },
   data() {
     return {

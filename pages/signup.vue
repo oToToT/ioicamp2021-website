@@ -61,7 +61,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "我要報名 | IOICamp 2021",
+    title: "我要報名",
   },
   data() {
     return {
@@ -77,6 +77,8 @@ export default Vue.extend({
       },
     };
   },
+  middleware: 'auth',
+  auth: 'guest',
   computed: {
     samePassword() {
       return this.account.password === this.checkPassword;

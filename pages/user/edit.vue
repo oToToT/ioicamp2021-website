@@ -102,7 +102,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "修改資料 | IOICamp 2021",
+    title: "修改資料",
   },
   middleware: "auth",
   data() {

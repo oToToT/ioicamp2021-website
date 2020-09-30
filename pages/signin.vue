@@ -25,12 +25,15 @@
             placeholder="your password",
             v-model="login.password"
           )
-        .right
+        div(style="display: flex; justify-content: space-between; align-items: center;")
+          span
+            NuxtLink(to="/user/requestPasswordReset/") 忘記密碼
+            | ？
           button#signin-btn.submit(type="submit") 登入
     h2
       i.fas.fa-chevron-right
       | &nbsp;沒有帳號？
-    .content
+    .padded.content
       p
         NuxtLink(to="/signup/") 立即報名
         | &nbsp;IOICamp 2021！
@@ -39,7 +42,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "登入 | IOICamp 2021",
+    title: "登入",
   },
   middleware: 'auth',
   auth: 'guest',
