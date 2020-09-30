@@ -52,6 +52,9 @@ a {
     font-weight: 900;
     margin-bottom: 10px !important;
   }
+  .padded.content {
+    margin-bottom: 15px;
+  }
   p {
     font-size: 1.1em;
   }
