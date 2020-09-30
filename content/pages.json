@@ -50,7 +50,8 @@
           },
           {
             "name": "　登出　",
-            "link": "/signout/"
+            "link": "/signout/",
+            "prefetch": false
           }
         ]
       }

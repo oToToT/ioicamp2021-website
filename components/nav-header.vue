@@ -24,7 +24,8 @@ header.nav
             :to="ele.link",
             :href="ele.link",
             :key="ele.link",
-            :class="{ active: isCurrentPage(ele) }"
+            :class="{ active: isCurrentPage(ele) }",
+            :prefetch="typeof ele.prefetch === 'undefined' ? true : ele.prefetch"
           )
             span(v-html="ele.name")
           .skewed.items(
@@ -38,7 +39,8 @@ header.nav
               nuxt-link.item(
                 v-for="obj in ele.children",
                 :to="ele.link + obj.link",
-                :key="obj.link"
+                :key="obj.link",
+                :prefetch="typeof obj.prefetch === 'undefined' ? true : obj.prefetch"
               ) {{ obj.name }}
       #touch-black(@click="toggleNav")
 </template>
