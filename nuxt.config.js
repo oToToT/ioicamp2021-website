@@ -83,7 +83,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://linux11.csie.org:8787',
+    baseURL: 'https://api.ioicamp.org/',
   },
   /*
   ** Build configuration
