@@ -28,13 +28,12 @@ export default {
       { hid: 'description', name: 'description', content: 'IOICamp 2021 程式解題競賽集訓營 - 「連便當工人都是國手的實力派營隊」' },
       { property: 'og:title', content: 'IOICamp 2021 程式解題競賽集訓營' },
       { property: 'og:url', content: 'https://ioicamp.org' },
-      { property: 'og:image', content: 'https://ioicamp.org/ioicamp-04.png' },
+      { property: 'og:image', content: 'https://ioicamp.org/icon.png' },
     ],
     htmlAttrs: {
       lang: 'zh-TW',
     },
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' },
     ]
