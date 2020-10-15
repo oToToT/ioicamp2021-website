@@ -80,7 +80,7 @@ header.nav {
   z-index: 9999;
   top: 0;
   width: 100vw;
-  background-color: #4c7084;
+  background-color: $default-background-color;
   @include with-mobile {
     padding-top: 0px;
   }
