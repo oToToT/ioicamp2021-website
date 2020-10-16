@@ -35,9 +35,6 @@ export default {
     htmlAttrs: {
       lang: 'zh-TW',
     },
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap' },
-    ]
   },
   /*
   ** Global CSS
@@ -67,6 +64,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/google-fonts',
   ],
   /*
   ** Nuxt.js modules
@@ -85,6 +83,16 @@ export default {
   */
   axios: {
     baseURL: 'https://api.ioicamp.org/',
+  },
+  /*
+   ** Google Font module configuration
+   ** See https://github.com/nuxt-community/google-fonts-module
+   */
+  googleFonts: {
+    families: {
+      'Noto+Sans+TC': [300,600,700,900],
+      'Noto+Serif+TC': [300,600,700],
+    },
   },
   /*
    ** FontAwesome module configuration
