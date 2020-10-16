@@ -93,6 +93,7 @@ export default {
       'Noto+Sans+TC': [300,600,700,900],
       'Noto+Serif+TC': [300,600,700],
     },
+    display: 'swap',
   },
   /*
    ** FontAwesome module configuration
