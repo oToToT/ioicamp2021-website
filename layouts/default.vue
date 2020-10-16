@@ -32,7 +32,7 @@ body {
 
 <style lang="scss" scoped>
 .background {
-  background-color: $footer-color;
+  background-color: $default-background-color;
   min-height: 100vh;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.25),
