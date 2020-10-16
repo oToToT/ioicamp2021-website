@@ -3,13 +3,13 @@
   form-section
     #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
-      i.fas.fa-chevron-right
+      font-awesome-icon(icon='chevron-right')
       | &nbsp;變更密碼
     .content
       form#signin-form(@submit.prevent="changePassword")
         label.input
           span
-            i.fas.fa-key
+            font-awesome-icon(icon='key')
             | &nbsp;當前密碼
           input(
             type="password",
@@ -18,7 +18,7 @@
           )
         label.input
           span
-            i.fas.fa-unlock
+            font-awesome-icon(icon='unlock')
             | &nbsp;新密碼
           input(
             type="password",
@@ -27,7 +27,7 @@
           )
         label.input(:class="{ error: !samePassword }")
           span
-            i.fas.fa-unlock-alt
+            font-awesome-icon(icon='unlock-alt')
             | &nbsp;確認新密碼
           input(
             type="password",

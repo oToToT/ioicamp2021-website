@@ -37,7 +37,6 @@ export default {
     },
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' },
     ]
   },
   /*
@@ -67,6 +66,7 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/fontawesome',
   ],
   /*
   ** Nuxt.js modules
@@ -87,6 +87,40 @@ export default {
     baseURL: 'https://api.ioicamp.org/',
   },
   /*
+   ** FontAwesome module configuration
+   ** See https://github.com/nuxt-community/fontawesome-module
+   */
+  fontawesome: {
+    icons: {
+      solid: [
+        'faChevronRight',
+        'faBars',
+        'faKey',
+        'faLock',
+        'faCheckDouble',
+        'faUnlock',
+        'faUnlockAlt',
+        'faVenusMars',
+        'faSchool',
+        'faGraduationCap',
+        'faHourglassHalf',
+        'faHistory',
+        'faTrophy',
+        'faListUl',
+        'faAlignLeft',
+        'faBook',
+        'faAward',
+        'faCaretDown',
+        'faTerminal',
+        'faAngleRight'
+      ],
+      regular: [
+        'faEnvelope',
+        'faUser',
+      ]
+    },
+  },
+  /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
@@ -100,6 +134,28 @@ export default {
   */
   router: {
     trailingSlash: true,
+  },
+  /*
+  ** Hook Configuration
+  ** See https://content.nuxtjs.org/advanced for nuxt content hook
+  */
+  hooks: {
+    'content:file:beforeInsert': (document)=> {
+      if (document.extension === '.md') {
+        for (let children of document.body.children) {
+          if (children.tag === 'p') {
+            children.children.unshift(
+              {
+                type: 'element',
+                tag: 'font-awesome-icon',
+                props: { icon: "angle-right", class: 'p-icon' },
+                children: []
+              }
+            );
+          }
+        }
+      }
+    }
   },
   /*
   ** Nuxt.js Auth Module

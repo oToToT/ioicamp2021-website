@@ -16,7 +16,7 @@ header.nav
         ) {{ current_page_name }}
     .right-side
       #nav-button(data-display="flex", data-time="100", @click="toggleNav")
-        i.fas.fa-bars
+        font-awesome-icon(icon='bars')
       #nav-list.ilist
         template(v-for="ele in pages")
           nuxt-link.skewed.item(
@@ -27,14 +27,16 @@ header.nav
             :class="{ active: isCurrentPage(ele) }",
             :prefetch="typeof ele.prefetch === 'undefined' ? true : ele.prefetch"
           )
-            span(v-html="ele.name")
+            span {{ ele.name }}
           .skewed.items(
             v-else,
             :class="{ active: isCurrentPage(ele) }",
             :key="ele.link",
             @click="toggleDropdown"
           )
-            span(v-html="ele.name")
+            span
+              | {{ ele.name }}
+              font-awesome-icon(icon='caret-down', class='dropdown-icon')
             .ilist(v-if="ele.children.length > 0", @click.stop)
               nuxt-link.item(
                 v-for="obj in ele.children",
@@ -269,6 +271,9 @@ header.nav {
             display: none !important;
           }
         }
+        .dropdown-icon {
+          display: none;
+        }
         @include with-not-mobile {
           &:hover,
           &.active:hover,
@@ -312,10 +317,9 @@ header.nav {
           & > * {
             transform: none;
           }
-          & > *:first-child::after {
-            content: " \f0d7";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
+          .dropdown-icon {
+            display: inline;
+            margin-left: 3px;
           }
           .ilist {
             margin-top: 10px;

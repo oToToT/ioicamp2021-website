@@ -8,7 +8,9 @@
         h3.name {{ teacher.name }}
         .experience
           ul(v-for="experience in teacher.experiences", :key="experience")
-            li {{ experience }}
+            li
+              font-awesome-icon(icon="award")
+              span.experience {{ experience }}
   .cutter
 </template>
 
@@ -65,24 +67,17 @@ export default Vue.extend({
         }
         .experience {
           padding-left: 8px;
-          & > ul > li {
-            font-family: "Noto Serif TC", serif;
-            font-weight: 600;
-            margin-bottom: 3px;
-            &:before {
-              content: "\f559 ";
-              font-family: "Font Awesome 5 Free";
-              font-weight: 600;
-              width: 1.2em;
-              display: inline-block;
-            }
-          }
+          margin-top: 10px;
+          font-size: 1.1em;
           & > ul {
             padding: 0;
             list-style: none;
+            & > li {
+              font-family: "Noto Serif TC", serif;
+              font-weight: 600;
+              margin-bottom: 3px;
+            }
           }
-          margin-top: 10px;
-          font-size: 1.1em;
         }
       }
       .image {

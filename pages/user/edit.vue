@@ -3,13 +3,13 @@
   form-section
     #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
-      i.fas.fa-chevron-right
+      font-awesome-icon(icon='chevron-right')
       | &nbsp;修改資料
     .content
       form#signin-form(@submit.prevent="updateInfo")
         label.input
           span
-            i.far.fa-envelope
+            font-awesome-icon(icon='["far", "envelope"]')
             | &nbsp;信箱
           input(
             type="email",
@@ -19,17 +19,17 @@
           )
         label.input
           span
-            i.far.fa-user
+            font-awesome-icon(:icon='["far", "user"]')
             | &nbsp;姓名
           input(type="text", placeholder="電人王", v-model="userInfo['name']")
         label.input
           span
-            i.fas.fa-venus-mars
+            font-awesome-icon(icon='venus-mars')
             | &nbsp;性別
           input(type="text", placeholder="男 / 女", v-model="userInfo['gender']")
         label.input
           span
-            i.fas.fa-school
+            font-awesome-icon(icon='school')
             | &nbsp;學校
           input(
             type="text",
@@ -38,12 +38,12 @@
           )
         label.input
           span
-            i.fas.fa-graduation-cap
+            font-awesome-icon(icon='graduation-cap')
             | &nbsp;年級
           input(type="text", placeholder="高中三年級", v-model="userInfo['grade']")
         label.input
           span
-            i.fas.fa-hourglass-half
+            font-awesome-icon(icon='hourglass-half')
             | &nbsp;學程式的時間
           input(
             type="text",
@@ -52,7 +52,7 @@
           )
         label.input
           span
-            i.fas.fa-history
+            font-awesome-icon(icon='history')
             | &nbsp;接觸競賽的時間
           input(
             type="text",
@@ -61,7 +61,7 @@
           )
         label.input
           span
-            i.fas.fa-trophy
+            font-awesome-icon(icon='trophy')
             | &nbsp;最自豪的獎項
           input(
             type="text",
@@ -70,7 +70,7 @@
           )
         label.input
           span
-            i.fas.fa-list-ul
+            font-awesome-icon(icon='list-ul')
             | &nbsp;OJ IDs
           input(
             type="text",
@@ -79,7 +79,7 @@
           )
         label.input
           span
-            i.fas.fa-align-left
+            font-awesome-icon(icon='align-left')
             | &nbsp;報名動機
           textarea(
             placeholder="我想學會寫程式跟大家一起PK",
@@ -87,7 +87,7 @@
           )
         label.input
           span
-            i.fas.fa-book
+            font-awesome-icon(icon='book')
             | &nbsp;備註
           input(
             type="text",

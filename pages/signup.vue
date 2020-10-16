@@ -3,13 +3,13 @@
   form-section
     #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
-      i.fas.fa-chevron-right
+      font-awesome-icon(icon='chevron-right')
       | &nbsp;建立帳號
     .content
       form#signup-form(@submit.prevent="signup")
         label.input
           span
-            i.far.fa-envelope
+            font-awesome-icon(:icon="['far', 'envelope']")
             | &nbsp;信箱
           input(
             type="email",
@@ -18,7 +18,7 @@
           )
         label.input
           span
-            i.fas.fa-lock
+            font-awesome-icon(icon='lock')
             | &nbsp;信箱驗證碼
           input.has-right(
             type="text",
@@ -29,7 +29,7 @@
             .btn(@click="getToken") 取得
         label.input
           span
-            i.fas.fa-key
+            font-awesome-icon(icon='key')
             | &nbsp;密碼
           input(
             type="password",
@@ -38,7 +38,7 @@
           )
         label.input(:class="{ error: !samePassword }")
           span
-            i.fas.fa-check-double
+            font-awesome-icon(icon='check-double')
             | &nbsp;確認密碼
           input(
             type="password",
@@ -48,7 +48,7 @@
         .right
           button#signup-btn.submit 報名
     h2
-      i.fas.fa-chevron-right
+      font-awesome-icon(icon='chevron-right')
       | &nbsp;已經有帳號？
     .content
       p

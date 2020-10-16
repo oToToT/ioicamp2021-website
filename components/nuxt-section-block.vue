@@ -1,7 +1,9 @@
 <template lang="pug">
 .section-block
   .section-header
-    h2 {{ document.title }}
+    h2
+      font-awesome-icon(icon="terminal", class="title-icon")
+      | {{ document.title }}
     label(v-if="date") {{ (new Date(document.createdAt)).toLocaleString('zh-TW') }}
   nuxt-content(:document="document")
 </template>

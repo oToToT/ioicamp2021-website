@@ -3,13 +3,13 @@
   form-section
     #msg-popout.message(v-if="popout.msg !== ''", :class="popout.status") {{ popout.msg }}
     h1
-      i.fas.fa-chevron-right
+      font-awesome-icon(icon='chevron-right')
       | &nbsp;忘記密碼
     .content
       form#signin-form(@submit.prevent="requestPasswordReset")
         label.input
           span
-            i.far.fa-envelope
+            font-awesome-icon(:icon="['far', 'envelope']")
             | &nbsp;信箱
           input(
             type="email",

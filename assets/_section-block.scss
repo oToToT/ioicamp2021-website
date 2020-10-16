@@ -23,12 +23,9 @@
       background: #222222;
       box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.8);
       h2 {
-        &:before {
+        .title-icon {
           color: white;
-          content: "\f120";
-          font-family: "Font Awesome 5 Free";
-          font-weight: 600;
-          margin-right: 10px !important;
+          margin-right: 10px;
         }
         color: #ffca34;
         position: relative;
@@ -48,10 +45,7 @@
       font-weight: 300;
       p {
         padding: 8px 0px;
-        &:before {
-          content: "\f105";
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
+        .p-icon {
           margin-right: 5px !important;
         }
         em,

@@ -2,6 +2,7 @@
 .section-block
   .section-header
     h2
+      font-awesome-icon(icon="terminal", class="title-icon")
       slot(name="title")
   .content
     slot
