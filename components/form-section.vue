@@ -81,7 +81,7 @@ a {
       input[type="text"],
       input[type="email"],
       input[type="password"] {
-        font-family: "Huninn", sans-serif;
+        font-family: "Noto Sans TC", sans-serif;
         font-size: 1.2em;
         display: inline-block;
         width: calc(80% - 10px);

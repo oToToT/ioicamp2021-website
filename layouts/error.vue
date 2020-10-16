@@ -42,18 +42,10 @@ export default Vue.extend({
 </style>
 
 <style lang="scss">
-@font-face {
-    font-family: "Huninn";
-    font-style: normal;
-    font-display: swap;
-    src: url('/jf-openhuninn-1.1.woff2') format("woff2"),
-        url('/jf-openhuninn-1.1.woff') format("woff"),
-        url('/jf-openhuninn-1.1.ttf') format("truetype");
-}
 * {
   margin: 0;
 }
 body {
-  font-family: "Huninn", "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
 </style>
