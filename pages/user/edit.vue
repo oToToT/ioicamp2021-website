@@ -62,7 +62,7 @@
         label.input
           span
             font-awesome-icon(icon='trophy')
-            | &nbsp;最自豪的獎項
+            | &nbsp;自豪的獎項們
           input(
             type="text",
             placeholder="IOI 滿分金、IMO 滿分金",
