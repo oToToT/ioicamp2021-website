@@ -123,6 +123,12 @@ export default Vue.extend({
         this.scrollToTop();
         return;
       }
+      if (this.account.password !== this.samePassword) {
+        this.popout.msg = "密碼不能是空的窩~(>_<。)＼";
+        this.popout.status = "error";
+        this.scrollToTop();
+        return;
+      }
       this.popout.msg = "註冊中...";
       this.popout.status = "info";
       try {
@@ -144,6 +150,8 @@ export default Vue.extend({
           this.popout.msg = "「信箱驗證碼」有填對嗎？";
         } else if (e.response.data.error === "User already exists") {
           this.popout.msg = "怎麼辦? 信箱被註冊走了耶";
+        } else {
+          this.popout.msg = "發生怪怪的錯誤了，請聯繫我們 ಥ_ಥ";
         }
         this.scrollToTop();
       }
