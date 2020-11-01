@@ -30,6 +30,9 @@ body {
       rgba(0, 0, 0, 0.25),
       rgba(0, 0, 0, 0.25)
     ), url('/background.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 #base {
   min-height: 94vh;
