@@ -5,12 +5,8 @@
       "link": "/"
     },
     {
-      "name": "活動簡章",
-      "link": "/rules/"
-    },
-    {
       "name": "集訓內容",
-      "link": "/event",
+      "link": "/content",
       "children": [
         {
           "name": "課程主題",
@@ -27,8 +23,18 @@
       ]
     },
     {
-      "name": "活動緣起",
-      "link": "/about/"
+      "name": "關於活動",
+      "link": "/event",
+      "children": [
+        {
+          "name": "活動簡章",
+          "link": "/rules/"
+        },
+        {
+          "name": "活動緣起",
+          "link": "/about/"
+        }
+      ]
     },
     {
       "name": "登入 / 報名",
