@@ -18,9 +18,9 @@
           td(colspan="4") 集合 / 早餐
         tr
           td 09:00~10:00
+          td(rowspan="2") 數學
           td(rowspan="2") 字串
           td(rowspan="2") 網路流
-          td(rowspan="2") 組合賽局
           td(rowspan="1") 彈性時間
         tr
           td 10:00~12:20
@@ -39,7 +39,7 @@
           td(rowspan="3") 圖論
           td(rowspan="3") 資料結構
           td(rowspan="3") 動態規劃
-          td(rowspan="3") 數學
+          td(rowspan="3") 組合賽局
         tr
           td 15:00~16:00
           td 頒獎時間
