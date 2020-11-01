@@ -3,7 +3,7 @@
   .banner
     banner
   nuxt-section-block(
-    v-for="article in articles",
+    v-for="article in news",
     :id="article.id",
     :document="article",
     :date="true",
@@ -20,11 +20,11 @@ export default Vue.extend({
   },
   data() {
     return {
-      articles: [],
+      news: [],
     };
   },
   async fetch() {
-    this.articles = await this.$content("news").sortBy("prio", "desc").sortBy("createdAt", "desc").fetch();
+    this.news = await this.$content("news").sortBy("prio", "desc").sortBy("createdAt", "desc").fetch();
   },
 });
 </script>
