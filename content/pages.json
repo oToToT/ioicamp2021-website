@@ -37,6 +37,10 @@
       ]
     },
     {
+      "name": "贊助夥伴",
+      "link": "/sponsors/"
+    },
+    {
       "name": "登入 / 報名",
       "link": "/signin/",
       "links": [
