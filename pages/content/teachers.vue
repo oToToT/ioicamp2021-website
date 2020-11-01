@@ -18,7 +18,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "集訓內容",
+    title: "師資陣容",
   },
   data() {
     return {

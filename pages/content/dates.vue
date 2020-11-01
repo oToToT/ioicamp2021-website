@@ -1,8 +1,5 @@
 <template lang="pug">
 .container
-  //- h1.title
-  //-   i.far.fa-calendar-alt
-  //-   | &nbsp;活動日程
   .dates
     table
         tr
@@ -61,7 +58,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "集訓內容",
+    title: "活動日程",
   },
 });
 </script>

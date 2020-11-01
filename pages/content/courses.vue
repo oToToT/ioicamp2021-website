@@ -1,8 +1,5 @@
 <template lang="pug">
 .container
-  //- h1.title
-  //-   i.fas.fa-book
-  //-   | &nbsp;課程主題
   .courses
     section-block.course
       template(v-slot:title) 課前自我鍛鍊
@@ -44,7 +41,7 @@
 import Vue from "vue";
 export default Vue.extend({
   head: {
-    title: "集訓內容",
+    title: "課程主題",
   },
   data() {
     return {
