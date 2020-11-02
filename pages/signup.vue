@@ -123,7 +123,7 @@ export default Vue.extend({
         this.scrollToTop();
         return;
       }
-      if (this.account.password !== this.samePassword) {
+      if (this.account.password === '') {
         this.popout.msg = "密碼不能是空的窩~(>_<。)＼";
         this.popout.status = "error";
         this.scrollToTop();
