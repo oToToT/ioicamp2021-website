@@ -21,7 +21,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    this.sponsors = await this.$content("sponsors").sortBy("prio", "desc").sortBy("createdAt", "desc").fetch();
+    this.sponsors = await this.$content("sponsors").sortBy("slug", "asc").fetch();
   },
 });
 </script>
