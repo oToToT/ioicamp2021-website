@@ -9,7 +9,7 @@
       form#signin-form(@submit.prevent="updateInfo")
         label.input
           span
-            font-awesome-icon(icon='["far", "envelope"]')
+            font-awesome-icon(:icon="['far', 'envelope']")
             | &nbsp;信箱
           input(
             type="email",
