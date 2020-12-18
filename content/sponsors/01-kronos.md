@@ -3,7 +3,7 @@ title: Kronos Research
 id: kronos
 ---
 
-<img src="/kronos.jpg" alt="Kronos Logo" style="float: right; width: 30%;"> 
+<img src="/kronos.jpg" alt="Kronos Logo" style="float: right; width: 25%;"> 
 
 ### 公司網站
 
