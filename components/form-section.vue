@@ -57,6 +57,7 @@ a {
   }
   p {
     font-size: 1.1em;
+    pading-bottom: 5px;
   }
   form {
     label.input {

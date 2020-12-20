@@ -21,18 +21,19 @@
           span
             font-awesome-icon(:icon='["far", "user"]')
             | &nbsp;姓名
-          input(type="text", placeholder="電人王", v-model="userInfo['name']")
+          input(type="text", placeholder="電人王", disabled, v-model="userInfo['name']")
         label.input
           span
             font-awesome-icon(icon='venus-mars')
             | &nbsp;性別
-          input(type="text", placeholder="男 / 女", v-model="userInfo['gender']")
+          input(type="text", placeholder="男 / 女", disabled, v-model="userInfo['gender']")
         label.input
           span
             font-awesome-icon(icon='school')
             | &nbsp;學校
           input(
             type="text",
+            disabled,
             placeholder="國立臺灣大學",
             v-model="userInfo['school']"
           )
@@ -40,7 +41,7 @@
           span
             font-awesome-icon(icon='graduation-cap')
             | &nbsp;年級
-          input(type="text", placeholder="高中三年級", v-model="userInfo['grade']")
+          input(type="text", placeholder="高中三年級", disabled, v-model="userInfo['grade']")
         label.input
           span
             font-awesome-icon(icon='hourglass-half')
@@ -48,6 +49,7 @@
           input(
             type="text",
             placeholder="5 年以上",
+            disabled,
             v-model="userInfo['code-time']"
           )
         label.input
@@ -57,6 +59,7 @@
           input(
             type="text",
             placeholder="1 年左右",
+            disabled,
             v-model="userInfo['cp-time']"
           )
         label.input
@@ -66,6 +69,7 @@
           input(
             type="text",
             placeholder="IOI 滿分金、IMO 滿分金",
+            disabled,
             v-model="userInfo['prize']"
           )
         label.input
@@ -75,6 +79,7 @@
           input(
             type="text",
             placeholder="Topcoder, Codeforces, Atcoder...",
+            disabled,
             v-model="userInfo['oj']"
           )
         label.input
@@ -83,6 +88,7 @@
             | &nbsp;報名動機
           textarea(
             placeholder="我想學會寫程式跟大家一起PK",
+            disabled,
             v-model="userInfo['motivation']"
           )
         label.input
@@ -92,6 +98,7 @@
           input(
             type="text",
             placeholder="我要睡電腦教室",
+            disabled,
             v-model="userInfo['comment']"
           )
         .right
@@ -126,25 +133,12 @@ export default Vue.extend({
         requestAnimationFrame(this.scrollToTop);
       }
     },
-    async updateInfo() {
-      this.popout.msg = "儲存中...";
+    updateInfo() {
+      this.popout.msg = "報名截止囉！";
       this.popout.status = "info";
-      try {
-        const res = await this.$axios.$put(
-          "/api/users/apply-form",
-          this.userInfo
-        );
-        this.popout.msg = "成功紀錄了。";
-        this.popout.status = "success";
-        this.scrollToTop();
-        await this.$auth.fetchUser();
-      } catch (e) {
-        this.popout.msg = "我們伺服器怪怪的，請跟我們聯絡 TAT";
-        this.popout.status = "error";
-        this.scrollToTop();
-      }
-    },
-  },
+      this.scrollToTop();
+    }
+  }
 });
 </script>
 
