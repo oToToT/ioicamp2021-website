@@ -1,7 +1,6 @@
 {
   "name": "ioicamp2021-website",
   "short_name": "ioicamp2021-website",
-  "description": "## Build Setup",
   "icons": [
     {
       "src": "/_nuxt/icons/icon_64x64.32c982.png",
