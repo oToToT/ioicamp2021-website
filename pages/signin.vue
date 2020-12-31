@@ -35,8 +35,7 @@
       | &nbsp;沒有帳號？
     .padded.content
       p
-        NuxtLink(to="/signup/") 立即報名
-        | &nbsp;IOICamp 2021！
+        | 報名截止囉！感謝支持！
 </template>
 <script>
 import Vue from "vue";
